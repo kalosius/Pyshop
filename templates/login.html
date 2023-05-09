@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Login card starts here -->
+<div class="container">
+    <div class="row m-4 pt-3">
+        <div class="col">
+            <div class="login-card-purple p-3 shadow-lg rounded">
+                <div class="pt-3">
+                    <h2 class="text-white ">Login </h2>
+                    </div>
+                <form class="mt-5">
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" class="form-control form-control-sm bg-light">
+                        </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control form-control-sm bg-light">
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberCheckBox">
+                        <label class="form-check-label text-light" for="rememberCheckBox">Remember me?</label>
+                        </div>
+                    <div class="mt-5">
+                        <button class="btn btn-sm btn-light col">
+                            Login
+                            </button>
+                        </div>
+                    <div class="text-center mt-2">
+                        <a href="#" class="text-warning">Forgot Password?</a>
+                        </div>
+                    <div class="mt-5">
+                        <p class="text-white text-center">
+                        Don't have an account?
+                        <a href="{% url 'register' %}" class="text-warning">Click here to register</a>
+                        </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- login card ends here -->
+
+
+<!-- css -->
+<style>
+    body{
+    font-size: 13px;
+}
+.login-card-purple{
+    background: linear-gradient(145deg, #673AB7 ,#9c27B0);
+}
+.login-card-yellow{
+    background: linear-gradient(145deg, #FFC107 ,#FFEB3B);
+}
+.login-card-light{
+    background: linear-gradient(145deg, #eee ,#fff);
+}
+.login-card-dark{
+    background: linear-gradient(145deg, #575b5d ,#252b2d);
+}
+.login-card-blue{
+    background: linear-gradient(145deg, #2196f3 ,#3f51b5);
+}
+.login-card-pink{
+    background: linear-gradient(145deg, #FC474E ,#e91e63);
+}
+</style>
+<!-- css end here -->
+
+{% endblock %}
