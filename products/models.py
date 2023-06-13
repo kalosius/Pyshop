@@ -13,3 +13,10 @@ class Offer(models.Model):
     description = models.CharField(max_length=255)
     discount = models.FloatField()
 
+class Registration(models.Model):
+    name = models.CharField(max_length=20)
+    email = models.CharField(max_length=30)
+    phone = models.IntegerField()
+    password = models.CharField(max_length=30)
+    
+    

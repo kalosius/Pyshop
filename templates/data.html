@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for data in regview %}
+
+    {{ data.name }}
+    {{ data.email }}
+    {{ data.phone }}
+    {{ data.job }}
+    {{ data.passwordmain }}
+    {{ data.passwordr }}
+
+{% endfor %}
+{% endblock %}

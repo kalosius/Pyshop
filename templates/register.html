@@ -2,11 +2,14 @@
 {% block content %}
 
 <!-- registration form starts here  -->
+<body style="background-color: #7ebef2;">
+	
+
 <div class="container">
 	<br>
 	<p class="text-center">Register from here</p>
 	<hr>
-<div class="card bg-light">
+<div class="card bg-light" style="background-color: lightskyblue;">
 	<article class="card-body mx-auto" style="max-width: 400px;">
 		<h4 class="card-title mt-3 text-center">Create Account</h4>
 		<p class="text-center">Get started with your free account</p>
@@ -17,59 +20,60 @@
 		<p class="divider-text">
 			<span class="bg-light">OR</span>
 		</p>
-		<form>
-		<div class="form-group input-group">
-			<div class="input-group-prepend">
-				<span class="input-group-text"> <i class="fa fa-user"></i> </span>
-			 </div>
-			<input name="full-name" class="form-control" placeholder="Full name" type="text">
-		</div>
-		<div class="form-group input-group">
-			<div class="input-group-prepend">
-				<span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-			 </div>
-			<input name="email-address" class="form-control" placeholder="Email address" type="email">
-		</div>
-		<div class="form-group input-group">
-			<div class="input-group-prepend">
-				<span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+		<form method="POST" action="">
+			{% csrf_token %}
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="fa fa-user"></i> </span>
+				 </div>
+				<input name="name" class="form-control" placeholder="Full name" type="text">
 			</div>
-			<select class="custom-select" style="max-width: 120px;">
-				<option selected="">+256</option>
-				<option value="1">+456</option>
-				<option value="2">+789</option>
-				<option value="3">+963</option>
-			</select>
-			<input name="phone-number" class="form-control" placeholder="Phone number" type="text">
-		</div>
-		<div class="form-group input-group">
-			<div class="input-group-prepend">
-				<span class="input-group-text"> <i class="fa fa-building"></i> </span>
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+				 </div>
+				<input name="email" class="form-control" placeholder="Email address" type="email">
 			</div>
-			<select class="form-control">
-				<option selected=""> Select job type</option>
-				<option>Designer</option>
-				<option>Manager</option>
-				<option>Accaunting</option>
-			</select>
-		</div>
-		<div class="form-group input-group">
-			<div class="input-group-prepend">
-				<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+				</div>
+				<select class="custom-select" style="max-width: 120px;">
+					<option selected="">+256</option>
+				</select>
+				<input name="phone" class="form-control" placeholder="Phone number" type="text">
 			</div>
-			<input class="form-control" placeholder="Create password" type="password">
-		</div>
-		<div class="form-group input-group">
-			<div class="input-group-prepend">
-				<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="fa fa-building"></i> </span>
+				</div>
+				<select name="job" class="form-control">
+					<option selected=""> Select job type</option>
+					<option>Employee</option>
+					<option>Driver</option>
+					<option>Garage</option>
+					<option>Customer</option>
+					
+				</select>
 			</div>
-			<input class="form-control" placeholder="Repeat password" type="password">
-		</div>                                      
-		<div class="form-group">
-			<button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
-		</div>      
-		<p class="text-center">Have an account? <a href="{% url 'login' %}">Log In</a> </p>                                                                 
-	</form>
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+				</div>
+				<input name="password" class="form-control" placeholder="Create password" type="password">
+			</div>
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+				</div>
+				<input name="passwordr" class="name" class="form-control" placeholder="Repeat password" type="password">
+			</div>                                      
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+			</div>      
+			<p class="text-center">Have an account? <a href="{% url 'login' %}">Log In</a> </p>                                                                 
+		
+		</form>
 	</article>
 </div>
 </div> 
