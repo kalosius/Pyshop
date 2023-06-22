@@ -16,6 +16,12 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -24,9 +30,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-2&%7turo$fx0qfwc1jc0qgxeifx)=)s0jwry2zxhp5*26d5w)k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,6 +47,9 @@ INSTALLED_APPS = [
     'products.apps.ProductsConfig',
     'django_filters',
     'crispy_forms',
+    'autogarage',
+    'employees',
+    
     
 ]
 
@@ -80,12 +89,30 @@ WSGI_APPLICATION = 'pyshop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+        
+#         'ENGINE': 'django.db.backends.postgresql',
+
+#         'NAME': 'pyshop',
+
+#         'USER': 'postgres',
+
+#         'PASSWORD': 'alosiuskas',
+
+#         'HOST': '127.0.0.1',
+
+#         'PORT': '5432',
+#     }
+# }
+
+
+import dj_database_url
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR , 'db.sqlite3',)
-    }
+    'default': dj_database_url.parse(env('DATABASE_URL'))
+
 }
+
 
 
 # Password validation
